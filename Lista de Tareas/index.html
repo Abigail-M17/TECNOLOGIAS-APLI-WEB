@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> Mi Lista de Tareas</h1>
+            <div class="stats">
+                <span id="total-tasks">0</span> tareas totales |
+                <span id="completed-tasks">0</span> completadas
+            </div>
+        </header>
+
+        <div class="input-section">
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="task-input" 
+                    placeholder="¿Qué tienes que hacer hoy?" 
+                    maxlength="100"
+                >
+                <button id="add-task-btn" class="btn-primary">
+                    <i class="fas fa-plus"></i> Agregar
+                </button>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> Todas
+                </button>
+                <button class="filter-btn" data-filter="pending">
+                    <i class="fas fa-clock"></i> Pendientes
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fas fa-check"></i> Completadas
+                </button>
+            </div>
+        </div>
+
+        <div class="tasks-container">
+            <ul id="tasks-list" class="tasks-list"></ul>
+            
+            <div id="empty-state" class="empty-state hidden">
+                <i class="fas fa-inbox"></i>
+                <h3>¡Tu lista está vacía!</h3>
+                <p>Agrega una tarea para comenzar</p>
+            </div>
+
+            <div id="no-results" class="empty-state hidden">
+                <i class="fas fa-search"></i>
+                <h3>No se encontraron resultados</h3>
+                <p>Intenta con otro filtro</p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="clear-completed" class="btn-secondary">
+                <i class="fas fa-trash"></i> Limpiar Completadas
+            </button>
+            <button id="clear-all" class="btn-danger">
+                <i class="fas fa-broom"></i> Limpiar Todo
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
