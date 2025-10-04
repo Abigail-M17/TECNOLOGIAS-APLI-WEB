@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juego de Gato (Tic-Tac-Toe)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Tic-Tac-Toe</h1>
+  </header>
+
+  <main id="mainContainer">
+    <section id="gameModeSelection" class="view">
+      <h2 style="margin-bottom:10px">Selecciona un modo de juego</h2>
+      <div class="menu-options">
+        <button id="vsPlayer">Jugador vs Jugador</button>
+        <button id="vsComputer" class="secondary">Jugador vs Computadora</button>
+      </div>
+    </section>
+
+    <section id="gameContainer" class="view hidden" aria-hidden="true">
+      <h3 id="gameModeTitle"></h3>
+      <div id="board" role="grid" aria-label="Tablero de Tic Tac Toe">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+
+      <div id="status"></div>
+
+      <div class="controls">
+        <button id="restartButton" class="reset">Reiniciar Partida</button>
+        <button id="backToMenuButton" class="menu">Regresar al Menú</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
