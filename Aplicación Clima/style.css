@@ -1,0 +1,355 @@
+/* Estilo para el cuerpo */
+body {
+    background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+    font-family: 'Arial, sans-serif';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0.25rem;
+}
+
+/* Contenedor principal */
+#app {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+}
+
+.weather-container {
+    max-width: 1100px;
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 1.25rem;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+    .weather-container {
+        padding: 2rem;
+        max-height: none;
+    }
+}
+
+/* Títulos */
+.title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin: 1rem 0 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+    .subtitle {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 0.75rem 0;
+    }
+}
+
+/* Buscador */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.city-input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #cbd5e1;
+    width: 70%;
+    min-width: 150px; 
+    font-size: 0.9rem;
+    background: #fff;
+    color: #1e293b;
+    flex: 1;
+}
+
+.city-input::placeholder {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.search-button {
+    padding: 0.5rem 1rem;
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.search-button:hover {
+    background-color: #1e40af;
+}
+
+@media (min-width: 768px) {
+    .city-input {
+        padding: 0.75rem;
+        min-width: 200px;
+        font-size: 1rem;
+    }
+
+    .search-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Loader y Error */
+.loader, .error-message {
+    text-align: center;
+    margin: 1rem 0;
+    color: #1e293b;
+    font-size: 1rem;
+}
+
+.error-message {
+    color: #dc2626;
+    background: #fef2f2;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #fecaca;
+    font-size: 1rem;
+}
+
+/* Clima Actual */
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .current-weather {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        gap: 3rem;
+    }
+}
+
+/* Secciones principales de clima actual */
+.current-weather .main-info {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.current-weather h2 {
+    font-size: 2rem;
+    margin-bottom: 0.125rem;
+    color: #1e293b;
+}
+
+@media (min-width: 768px) {
+    .current-weather h2 {
+        font-size: 2.5rem;
+    }
+}
+
+.current-weather p.text-7xl {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+    color: #1e293b;
+}
+
+@media (min-width: 768px) {
+    .current-weather p.text-7xl {
+        font-size: 4rem;
+    }
+}
+
+.current-weather p.text-xl {
+    font-size: 1rem;
+    margin: 0.125rem 0;
+    color: #475569;
+    text-transform: capitalize;
+}
+
+@media (min-width: 768px) {
+    .current-weather p.text-xl {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Contenedor para agrupar icono y detalles */
+.icon-and-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .icon-and-details {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+
+/* Icono */
+.weather-icon {
+    font-size: 80px;
+    color: #f59e0b;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, filter 0.3s;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .weather-icon {
+        font-size: 100px;
+    }
+}
+
+.weather-icon:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+
+/* Detalles */
+.current-weather .details {
+    text-align: center;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .current-weather .details {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+/* Pronóstico */
+.forecast {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.75rem;
+    padding: 0.25rem 0;
+    width: 100%;
+    justify-content: center;
+    scrollbar-width: thin;
+}
+
+.forecast::-webkit-scrollbar {
+    height: 3px;
+}
+
+.forecast::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 1.5px;
+}
+
+.forecast-card {
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    flex: 0 0 auto;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 140px;
+    justify-content: space-between;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@media (min-width: 768px) {
+    .forecast-card {
+        width: 120px;
+        min-height: 160px;
+        padding: 1rem;
+    }
+}
+
+.forecast-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-card p.font-bold {
+    font-size: 0.875rem;
+    color: #1e293b;
+    margin-bottom: 0.125rem;
+}
+
+@media (min-width: 768px) {
+    .forecast-card p.font-bold {
+        font-size: 1rem;
+    }
+}
+
+.forecast-icon {
+    font-size: 50px;
+    color: #f59e0b;
+    text-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1);
+    margin: 0.125rem 0;
+}
+
+@media (min-width: 768px) {
+    .forecast-icon {
+        font-size: 60px;
+    }
+}
+
+.forecast-card p.font-semibold {
+    font-size: 0.95rem;
+    color: #1e293b;
+    margin: 0.125rem 0 0 0;
+}
+
+@media (min-width: 768px) {
+    .forecast-card p.font-semibold {
+        font-size: 1.1rem;
+    }
+}
+
+.hidden {
+    display: none;
+}
