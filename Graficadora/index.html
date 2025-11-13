@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graficadora de Funciones</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Funciones</h2>
+      <div id="function-list"></div>
+      <div class="input-group">
+        <input type="text" id="function-input" placeholder="Ej: sin(x), x^2, 2*x + 1" />
+      </div>
+      <button id="toggle-keyboard" class="keyboard-btn">Teclado</button>
+    </div>
+
+    <div class="graph-area">
+      <div class="toolbar">
+        <button id="zoom-in">🔍 +</button>
+        <button id="zoom-out">🔍 −</button>
+        <button id="reset-view">↺</button>
+        <button id="toggle-grid-labels" class="toggle-btn">Numeración</button>
+      </div>
+      <canvas id="graph-canvas"></canvas>
+    </div>
+  </div>
+
+  <div id="virtual-keyboard" class="keyboard hidden">
+    <div class="keyboard-header">
+      <button id="hide-keyboard" class="hide-arrow">Minimizar</button>
+    </div>
+    <div class="keyboard-grid">
+      
+      <button data-value="x">x</button>
+      <button data-value="pi">π</button>
+      <button data-value="e">e</button>
+      <button data-value="^">^</button>
+      <button data-value="7">7</button>
+      <button data-value="8">8</button>
+      <button data-value="9">9</button>
+      <button data-value="Backspace" class="special">←</button>
+      
+
+      <button data-value="^2">x²</button>
+      <button data-value="sqrt(">√(</button>
+      <button data-value="log(">log(</button>
+      <button data-value="(">(</button>
+      <button data-value="4">4</button>
+      <button data-value="5">5</button>
+      <button data-value="6">6</button>
+      <button data-value="*" class="special">×</button>
+
+      <button data-value="sin(">sin(</button>
+      <button data-value="cos(">cos(</button>
+      <button data-value="tan(">tan(</button>
+      <button data-value=")">)</button>
+      <button data-value="1">1</button>
+      <button data-value="2">2</button>
+      <button data-value="3">3</button>
+      <button data-value="-" class="special">−</button>
+      
+      <button data-value="Enter" class="special" style="grid-column: span 3;">GRAFICAR</button>
+      <button data-value="." class="special">.</button>
+      <button data-value="/" class="special">÷</button>
+      <button data-value="0" style="grid-column: span 2;">0</button>
+      <button data-value="+" class="special">+</button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
